@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Dashboard | Online Hospital System</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+<div class="bg-blue-700 text-white p-4 flex justify-between items-center">
+  <h1 class="text-lg md:text-2xl font-bold">Patient Dashboard</h1>
+  <div class="flex items-center space-x-4">
+    <a href="login.html" class="bg-red-600 px-3 py-1 rounded hover:bg-red-700 text-white text-sm">Logout</a>
+  </div>
+</div>
+
+<div class="p-4 md:p-8 space-y-6">
+
+  <div class="bg-white p-5 rounded-xl shadow">
+    <h2 class="text-xl font-bold mb-4">Request Appointment</h2>
+    
+    
+    <input type="checkbox" id="appointment-toggle" class="hidden peer">
+    
+    <form class="space-y-3">
+
+      <div>
+        <label class="block mb-1 font-semibold">Select Doctor</label>
+        <select class="border p-2 w-full rounded">
+          <option>Dr. Alice</option>
+          <option>Dr. Jean</option>
+          <option>Dr. Smith</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block mb-1 font-semibold">Preferred Date</label>
+        <input type="date" class="border p-2 w-full rounded">
+      </div>
+
+      <div>
+        <label class="block mb-1 font-semibold">Describe how you feel</label>
+        <textarea class="border p-2 w-full rounded" rows="3" placeholder="Write your symptoms..."></textarea>
+      </div>
+
+    
+      <label for="appointment-toggle" class="bg-green-600 text-white px-4 py-2 rounded block text-center cursor-pointer">
+       <a href="apoitment.html" class="bg-green-600 text-white px-4 py-2 rounded">
+    Request for Appointment
+  </a>
+      </label>
+
+      
+      <div class="hidden peer-checked:block bg-green-100 border-l-4 border-green-600 text-green-800 p-3 rounded shadow mt-3">
+        ✅ Your appointment request has been submitted!
+      </div>
+
+    </form>
+  </div>
+
+  <div class="bg-white p-5 rounded-xl shadow">
+    <h2 class="text-xl font-bold mb-3">Requested Appointments</h2>
+    <ul class="space-y-1">
+      <li>Dr. Alice — 12 March 2026 — Dental</li>
+      <li>Dr. Jean — 20 March 2026 — Consultation</li>
+    </ul>
+  </div>
+
+  <div class="bg-white p-5 rounded-xl shadow">
+    <h2 class="text-xl font-bold mb-4">Inbox</h2>
+    <div class="space-y-3 max-h-80 overflow-y-auto">
+
+      
+      <div class="border-l-4 border-blue-600 bg-gray-50 p-3 rounded shadow">
+        <p class="font-semibold">Dr. Alice</p>
+        <p class="text-gray-600 text-sm">“Please take your medication before your next visit. Let me know if you feel any side effects.”</p>
+        <p class="text-gray-400 text-xs mt-1">12 Feb 2026</p>
+        <a href="#reply" class="mt-2 inline-block bg-green-600 text-white px-3 py-1 rounded text-sm">Reply</a>
+      </div>
+
+      <div class="border-l-4 border-yellow-500 bg-gray-50 p-3 rounded shadow">
+        <p class="font-semibold">Dr. Jean</p>
+        <p class="text-gray-600 text-sm">“Your lab results are ready. Please schedule a follow-up.”</p>
+        <p class="text-gray-400 text-xs mt-1">10 Feb 2026</p>
+        <a href="#reply" class="mt-2 inline-block bg-green-600 text-white px-3 py-1 rounded text-sm">Reply</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="reply" class="bg-white p-5 rounded-xl shadow">
+    <h2 class="text-xl font-bold mb-4">Reply to Doctor</h2>
+    <form class="space-y-3">
+
+      <div>
+        <label class="block mb-1 font-semibold">Select Doctor</label>
+        <select class="border p-2 w-full rounded">
+          <option>Dr. Alice</option>
+          <option>Dr. Jean</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block mb-1 font-semibold">Your Message</label>
+        <textarea class="border p-2 w-full rounded" rows="3" placeholder="Write your message here..."></textarea>
+      </div>
+
+
+      <a href="#sent" class="bg-blue-600 text-white px-4 py-2 rounded block text-center">
+        Send Message
+      </a>
+
+      <a href="#admin-notify" class="bg-gray-800 text-white px-4 py-2 rounded block text-center mt-2">
+        Notify Admin
+      </a>
+
+
+      <div id="sent" class="bg-blue-100 border-l-4 border-blue-600 text-blue-800 p-3 rounded shadow mt-3">
+        ✅ Your message has been sent to the doctor.
+      </div>
+
+      <div id="admin-notify" class="bg-gray-200 border-l-4 border-gray-600 text-gray-800 p-3 rounded shadow mt-2">
+        ⚠️ Admin has been notified.
+      </div>
+
+    </form>
+  </div>
+
+  <div class="bg-white p-5 rounded-xl shadow">
+    <h2 class="text-xl font-bold mb-4">Upcoming Appointments</h2>
+    <ul class="space-y-2">
+      <li class="flex justify-between border-b pb-2">
+        <span>Dr. Alice — 12 March 2026</span>
+        <span class="text-gray-500">Dental</span>
+      </li>
+      <li class="flex justify-between border-b pb-2">
+        <span>Dr. Jean — 20 March 2026</span>
+        <span class="text-gray-500">Consultation</span>
+      </li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>
